@@ -1,0 +1,150 @@
+package com.sendinfo.ebiz.superSale.model;
+import com.sendinfo.ebiz3.model.BaseEntity;
+import java.util.Date;
+
+public class SuperSale extends BaseEntity{
+	private static final long serialVersionUID = 1L;
+	//静态变量
+	public static final String TITLE="title";
+	public static final String TYPEID="typeId";
+	public static final String OBJECTID="objectId";
+	public static final String PRICE="price";
+	public static final String DISCOUNTPRICE="discountPrice";
+	public static final String DISCOUNT="discount";
+	public static final String CREATEBY="createBy";
+	public static final String MODIFYOPID="modifyOpId";
+	public static final String MODIFYOPNAME="modifyOpName";
+	public static final String APPCODE="appCode";
+
+	private String title;
+	private Long typeId;
+	private Long objectId;
+	private Double price;
+	private Double discountPrice;
+	private Double discount;
+	private String createBy;
+	private Long modifyOpId;
+	private String modifyOpName;
+	private Integer appCode;
+
+	/**
+	 *标题
+	 */
+	public void setTitle(String title){
+		this.title = title;
+	}
+	/**
+	 *标题
+	 */
+	public String getTitle(){
+		return this.title;
+	}
+	/**
+	 *类型1线路2自由行3景区4酒店
+	 */
+	public void setTypeId(Long typeId){
+		this.typeId = typeId;
+	}
+	/**
+	 *类型1线路2自由行3景区4酒店
+	 */
+	public Long getTypeId(){
+		return this.typeId;
+	}
+	/**
+	 *目标id
+	 */
+	public void setObjectId(Long objectId){
+		this.objectId = objectId;
+	}
+	/**
+	 *目标id
+	 */
+	public Long getObjectId(){
+		return this.objectId;
+	}
+	/**
+	 *价格
+	 */
+	public void setPrice(Double price){
+		this.price = price;
+	}
+	/**
+	 *价格
+	 */
+	public Double getPrice(){
+		return this.price;
+	}
+	/**
+	 *折扣价
+	 */
+	public void setDiscountPrice(Double discountPrice){
+		this.discountPrice = discountPrice;
+	}
+	/**
+	 *折扣价
+	 */
+	public Double getDiscountPrice(){
+		return this.discountPrice;
+	}
+	/**
+	 *折扣
+	 */
+	public void setDiscount(Double discount){
+		this.discount = discount;
+	}
+	/**
+	 *折扣
+	 */
+	public Double getDiscount(){
+		return this.discount;
+	}
+	/**
+	 *创建人
+	 */
+	public void setCreateBy(String createBy){
+		this.createBy = createBy;
+	}
+	/**
+	 *创建人
+	 */
+	public String getCreateBy(){
+		return this.createBy;
+	}
+	/**
+	 *修改人id
+	 */
+	public void setModifyOpId(Long modifyOpId){
+		this.modifyOpId = modifyOpId;
+	}
+	/**
+	 *修改人id
+	 */
+	public Long getModifyOpId(){
+		return this.modifyOpId;
+	}
+	/**
+	 *修改人姓名
+	 */
+	public void setModifyOpName(String modifyOpName){
+		this.modifyOpName = modifyOpName;
+	}
+	/**
+	 *修改人姓名
+	 */
+	public String getModifyOpName(){
+		return this.modifyOpName;
+	}
+	/**
+	 *
+	 */
+	public void setAppCode(Integer appCode){
+		this.appCode = appCode;
+	}
+	/**
+	 *
+	 */
+	public Integer getAppCode(){
+		return this.appCode;
+	}
+}

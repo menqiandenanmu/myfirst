@@ -1,0 +1,13 @@
+#Mon Oct 20 13:57:35 CST 2014
+tomcat6Server.ebiz3_hgs.isUptoDate=true
+tomcat6Server.ebiz3_hgs.shouldOverwrite=false
+tomcat6Server.ebiz3_hgs.IEARProjectName=
+tomcat6Server.ebiz3_hgs.deployIsOverProject=false
+tomcat6Server.ebiz3_hgs.isDeployed=true
+tomcat6Server.ebiz3_hgs.contextRoot=/hgs
+tomcat6Server.ebiz3_hgs.shouldBackup=false
+tomcat6Server.ebiz3_hgs.altContextRoot=
+tomcat6Server.ebiz3_hgs.deploymentPath=D\:\\setup\\tomcat\\4\\apache-tomcat-6.0.37\\webapps\\hgs
+tomcat6Server.ebiz3_hgs.type=WebDeployment
+eclipse.preferences.version=1
+tomcat6Server.ebiz3_hgs.isExploded=true

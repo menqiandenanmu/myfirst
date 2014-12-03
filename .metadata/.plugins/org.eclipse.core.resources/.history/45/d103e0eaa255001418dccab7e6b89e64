@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="SUPERSALE" >
+	<typeAlias alias="superSaleAlias" type="com.sendinfo.ebiz.superSale.model.SuperSale"/>
+	<resultMap id="superSaleResultMap" class="superSaleAlias" >
+    	<result column="ID" property="id"/>
+    	<result column="TITLE" property="title"/>
+    	<result column="TYPE_ID" property="typeId"/>
+    	<result column="OBJECT_ID" property="objectId"/>
+    	<result column="PRICE" property="price"/>
+    	<result column="DISCOUNT_PRICE" property="discountPrice"/>
+    	<result column="DISCOUNT" property="discount"/>
+    	<result column="CREATE_TIME" property="createTime"/>
+    	<result column="CREATE_BY" property="createBy"/>
+    	<result column="MODIFIED_TIME" property="modifiedTime"/>
+    	<result column="MODIFY_OP_ID" property="modifyOpId"/>
+    	<result column="MODIFY_OP_NAME" property="modifyOpName"/>
+    	<result column="DELETED" property="deleted"/>
+    	<result column="APP_CODE" property="appCode"/>
+	</resultMap>
+	
+	<sql id="ALL_SQL">
+		<isNotEmpty prepend="and" property="title" >
+			TITLE = #title#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="typeId" >
+			TYPE_ID = #typeId#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="objectId" >
+			OBJECT_ID = #objectId#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="price" >
+			PRICE = #price#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="discountPrice" >
+			DISCOUNT_PRICE = #discountPrice#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="discount" >
+			DISCOUNT = #discount#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="createBy" >
+			CREATE_BY = #createBy#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="modifyOpId" >
+			MODIFY_OP_ID = #modifyOpId#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="modifyOpName" >
+			MODIFY_OP_NAME = #modifyOpName#
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="appCode" >
+			APP_CODE = #appCode#
+		</isNotEmpty>
+	</sql>
+	
+	<select id="SELECT_PAGE" parameterClass="java.util.Map" resultMap="superSaleResultMap">
+		select * from SUPER_SALE where 1=1 and deleted=0
+		<include refid="ALL_SQL"/>
+		order by create_time desc
+	</select>
+	  
+	<select id="SELECT_COUNT_PAGE" parameterClass="superSaleAlias" resultClass="Integer">
+		select count(*) as totalCount from SUPER_SALE where 1=1 and deleted=0
+		<include refid="ALL_SQL"/>
+	</select>
+  
+	<select id="SELECT_BY_ALL" resultMap="superSaleResultMap" parameterClass="superSaleAlias">
+  	select * from SUPER_SALE
+	where deleted=0
+		<include refid="ALL_SQL"/>
+		order by create_time desc
+	</select>
+	
+	<select id="SELECT_BY_PK" resultMap="superSaleResultMap" parameterClass="superSaleAlias" >
+		select *
+		from SUPER_SALE
+		where ID = #id#
+	</select>
+	
+	<delete id="DELETE_BY_PK" parameterClass="superSaleAlias" >
+		delete from SUPER_SALE
+		where ID = #id# and MODIFIED_TIME=#modifiedTime#
+	</delete>
+	
+	<insert id="INSERT" parameterClass="superSaleAlias" >
+		insert into SUPER_SALE
+		<dynamic prepend="(" >
+			<isNotNull prepend="," property="id" >
+				ID
+			</isNotNull>
+			<isNotNull prepend="," property="title" >
+				TITLE
+			</isNotNull>
+			<isNotNull prepend="," property="typeId" >
+				TYPE_ID
+			</isNotNull>
+			<isNotNull prepend="," property="objectId" >
+				OBJECT_ID
+			</isNotNull>
+			<isNotNull prepend="," property="price" >
+				PRICE
+			</isNotNull>
+			<isNotNull prepend="," property="discountPrice" >
+				DISCOUNT_PRICE
+			</isNotNull>
+			<isNotNull prepend="," property="discount" >
+				DISCOUNT
+			</isNotNull>
+			<isNotNull prepend="," property="createTime" >
+				CREATE_TIME
+			</isNotNull>
+			<isNotNull prepend="," property="createBy" >
+				CREATE_BY
+			</isNotNull>
+			<isNotNull prepend="," property="modifiedTime" >
+				MODIFIED_TIME
+			</isNotNull>
+			<isNotNull prepend="," property="modifyOpId" >
+				MODIFY_OP_ID
+			</isNotNull>
+			<isNotNull prepend="," property="modifyOpName" >
+				MODIFY_OP_NAME
+			</isNotNull>
+			<isNotNull prepend="," property="deleted" >
+				DELETED
+			</isNotNull>
+			<isNotNull prepend="," property="appCode" >
+				APP_CODE
+			</isNotNull>
+			)
+		</dynamic>
+		values
+		<dynamic prepend="(">
+			<isNotNull prepend="," property="id" >
+				#id#
+			</isNotNull>
+			<isNotNull prepend="," property="title" >
+				#title#
+			</isNotNull>
+			<isNotNull prepend="," property="typeId" >
+				#typeId#
+			</isNotNull>
+			<isNotNull prepend="," property="objectId" >
+				#objectId#
+			</isNotNull>
+			<isNotNull prepend="," property="price" >
+				#price#
+			</isNotNull>
+			<isNotNull prepend="," property="discountPrice" >
+				#discountPrice#
+			</isNotNull>
+			<isNotNull prepend="," property="discount" >
+				#discount#
+			</isNotNull>
+			<isNotNull prepend="," property="createTime" >
+				#createTime#
+			</isNotNull>
+			<isNotNull prepend="," property="createBy" >
+				#createBy#
+			</isNotNull>
+			<isNotNull prepend="," property="modifiedTime" >
+				#modifiedTime#
+			</isNotNull>
+			<isNotNull prepend="," property="modifyOpId" >
+				#modifyOpId#
+			</isNotNull>
+			<isNotNull prepend="," property="modifyOpName" >
+				#modifyOpName#
+			</isNotNull>
+			<isNotNull prepend="," property="deleted" >
+				#deleted#
+			</isNotNull>
+			<isNotNull prepend="," property="appCode" >
+				#appCode#
+			</isNotNull>
+			)
+		</dynamic>
+	</insert>
+	
+	<update id="UPDATE_BY_PK" parameterClass="superSaleAlias" >
+		update SUPER_SALE
+		set 
+		TITLE = #title#,
+		TYPE_ID = #typeId#,
+		OBJECT_ID = #objectId#,
+		PRICE = #price#,
+		DISCOUNT_PRICE = #discountPrice#,
+		DISCOUNT = #discount#,
+		CREATE_TIME = #createTime#,
+		CREATE_BY = #createBy#,
+		MODIFY_OP_ID = #modifyOpId#,
+		MODIFY_OP_NAME = #modifyOpName#,
+		DELETED = #deleted#,
+		APP_CODE = #appCode#,
+		MODIFIED_TIME = #now#
+		where ID = #id# and MODIFIED_TIME=#modifiedTime#
+	</update>
+	
+	<select id="SELECT_SEQ" resultClass="Long">
+		select SEQ_SUPER_SALE.nextval from dual
+	</select>
+</sqlMap>

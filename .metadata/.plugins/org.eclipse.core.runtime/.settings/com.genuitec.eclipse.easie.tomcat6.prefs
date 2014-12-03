@@ -1,0 +1,9 @@
+#Thu Oct 16 15:51:05 CST 2014
+SERVER_ENABLEMENT=true
+LIBRARY_PATH="D\:\\MyEclipse 8.5\\Common\\binary\\com.sun.java.jdk.win32.x86_1.6.0.013\\bin;D\:\\setup\\tomcat\\4\\apache-tomcat-6.0.37\\bin"
+eclipse.preferences.version=1
+JDK_HOME=D\:\\MyEclipse 8.5\\Common\\binary\\com.sun.java.jdk.win32.x86_1.6.0.013
+TOMCAT_BASE=D\:\\setup\\tomcat\\4\\apache-tomcat-6.0.37
+ENDORSED_DIRS="D\:\\setup\\tomcat\\4\\apache-tomcat-6.0.37/common/endorsed"
+TOMCAT_HOME=D\:\\setup\\tomcat\\4\\apache-tomcat-6.0.37
+TOMCAT_TEMP=D\:\\setup\\tomcat\\4\\apache-tomcat-6.0.37\\temp

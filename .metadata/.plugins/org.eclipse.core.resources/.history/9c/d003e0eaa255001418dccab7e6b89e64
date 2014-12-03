@@ -1,0 +1,20 @@
+package com.sendinfo.ebiz.superSale.dao;
+
+import java.util.List;
+import org.springframework.stereotype.Repository;
+import com.sendinfo.xspring.ibatis.page.Page;
+import com.sendinfo.xspring.ibatis.page.PageRequest;
+import com.sendinfo.ebiz.superSale.model.SuperSale;
+import com.sendinfo.ebiz3.dao.BaseDao;
+
+@Repository
+public class SuperSaleDao extends BaseDao<SuperSale, Long>{
+	public List<SuperSale> find(SuperSale superSale) {
+		return this.queryEntitys("ALL", superSale);
+	}
+	
+	public Page<SuperSale> page(PageRequest<SuperSale> request){
+		Page<SuperSale> result=this.pageQuery(request,"PAGE");
+		return result;
+	}
+}
